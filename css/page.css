@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+body, html{padding:0px; margin:0px; width:100%; height:100%;}
+div.login_head{position:absolute; top:0px; width:100%; height:50%; background:#b0d0e9; z-index:0;}
+div.login_feed{position:absolute; top:50%; width:100%; height:50%; background:#a2c8e5; z-index:0;}
+div.middle{width:100%; height:572px; background:url('../images/login_08.png') repeat-x; text-align:center; position: absolute;top:50%;margin-top:-286px; z-index:999;}
+div.middle div.xmiddle{width:779px; height:100%;}
+div.middle div.xmiddle div.left{width:52px; height:100%; float:left; background:url('../images/login_01.png') no-repeat;}
+div.middle div.xmiddle div.middle_login{width:675px; height:100%; float:left;}
+div.middle div.xmiddle div.right{width:52px; height:100%; float:left; background:url('../images/login_02.png') no-repeat;}
+div.middle div.xmiddle div.middle_login div.head_middle{height:122px; width:100%; position: relative; top:0px; background:url('../images/login_03.png');}
+div.middle div.xmiddle div.middle_login div.middle_middle{height:324px; width:100%; position: relative; top:0px; background:url('../images/login_04.png') repeat-x;}
+div.middle div.xmiddle div.middle_login div.middle_middle div.login_img{float:left; height:100%; width:387px; background:url('../images/login_05.png');}
+div.middle div.xmiddle div.middle_login div.middle_middle div.login_middle{float:right; height:100%; width:288px;background:url('../images/login_06.png') no-repeat;}
+div.middle div.xmiddle div.middle_login div.middle_middle div.login_middle div.main_head{width:100%; height:93px; position: relative; top:0px; background:url('../images/login_06.png') no-repeat;}
+div.middle div.xmiddle div.middle_login div.middle_middle div.login_middle div.main_content{width:100%; height:231px; position: relative; top:0px;}
+div.middle div.xmiddle div.middle_login div.feed_middle{height:126px; width:100%; position: relative; top:0px; background:url('../images/login_07.png');}
+div.main_content table.login_table{border:0px; width:80%; font-size:14px; margin-top:20px;}
+div.main_content table.login_table tr{height:25px;}
+div.main_content table.login_table tr td{height:25px;}
+div.main_content table.login_table input.namepwd{height:30px; width:100%; line-height:18px; border:#b8c3cc 1px solid; padding: 5px;}
+div.main_content table.login_table input.loginsure{height:30px; width:99px; background:url('../images/login_sure.png'); border:0px; margin-left:0px;cursor:pointer;}
+div.main_content table.login_table input.loginreset{height:30px; width:99px; background:url('../images/login_reset.png'); border:0px; margin-left:15px;cursor:pointer;}

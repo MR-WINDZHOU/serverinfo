@@ -1,0 +1,1839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.1.v20080911 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[importPackage( Packages.com.shxy.birt.action,Packages.java.lang,Packages.java.util,Packages.com.shxy.commmon); 
+importPackage( Packages.com.shxy.exception); 
+importPackage( Packages.com.shxy.util); 
+personID="";
+path="";
+]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="personIDs" id="200">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="batch" id="201">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="business" id="544">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report" id="545">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="node" id="546">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="数据源" id="308">
+            <method name="beforeOpen"><![CDATA[path = reportContext.getHttpServletRequest().getSession().getServletContext().getRealPath("/");]]></method>
+            <method name="open"><![CDATA[personIDs = new String(params["personIDs"]);
+business = new String(params["business"]);
+batch = new String(params["batch"]);
+node = new String(params["node"]);
+report = new String(params["report"]);
+session = reportContext.getHttpServletRequest().getSession();
+TV = new BirtReadData(business, node, report, session);]]></method>
+        </script-data-source>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="数据集" id="309">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">c1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">c2</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">c3</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">c4</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">c5</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">c6</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">c7</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">c8</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">c9</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">c10</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">c11</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">c12</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">c13</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">c14</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">c15</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">c16</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">c17</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">c18</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">c19</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">c20</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">c21</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">c22</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">c23</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">c24</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">c25</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">c26</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">c1</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c2</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c3</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c4</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c5</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c6</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c7</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c8</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c9</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c10</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c11</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c12</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c13</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c14</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c15</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c16</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c17</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c18</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c19</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c20</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c21</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c22</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c23</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c24</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c25</property>
+                </structure>
+                <structure>
+                    <property name="columnName">c26</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">c1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">c2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">c3</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">c4</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">c5</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">c6</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">c7</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">c8</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">c9</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">c10</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">c11</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">c12</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">c13</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">c14</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">c15</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">c16</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">c17</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">c18</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">c19</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">c20</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">c21</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">c22</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">c23</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">c24</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">c25</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">c26</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">数据源</property>
+            <method name="open"><![CDATA[count = 0 ;
+result = TV.queryData("ZGJOB_0702_1",personIDs,batch);]]></method>
+            <method name="fetch"><![CDATA[if (count < result.length){
+    row.c1 = result[count][2]==null?"":result[count][2];
+    row.c2 = result[count][3]==null?"":result[count][3];
+    row.c3 = result[count][4];
+     if(result[count][5]!=null&amp;&amp;!result[count][5].equals(""))
+    {
+    row.c4 = result[count][5].split("-")[0]+"."+result[count][5].split("-")[1];
+    }
+    row.c5 = result[count][6];
+
+    row.c6 = result[count][7];
+
+    row.c7 = result[count][8];
+    row.c8 = result[count][9];
+    row.c9 = result[count][10]+result[count][11];
+    if(result[count][12]!=null&amp;&amp;!result[count][12].equals(""))
+    {
+      result[count][12]=result[count][12].split(" ")[0];
+    row.c10 = result[count][12].split("-")[0]+"."+result[count][12].split("-")[1]+"."+result[count][12].split("-")[2];
+    }
+     if(result[count][13]!=null&amp;&amp;!result[count][13].equals(""))
+    {
+    result[count][13]=result[count][13].split(" ")[0];
+    row.c11 = result[count][13].split("-")[0]+"."+result[count][13].split("-")[1]+"."+result[count][13].split("-")[2];
+    }
+    row.c12 = result[count][14];
+    row.c13 = result[count][16];
+    row.c14 = result[count][17];
+    row.c15 = result[count][18];
+    row.c16 = result[count][19];
+    row.c17 = result[count][20].replace("-",".");
+    row.c18 = result[count][21];
+    row.c19 = result[count][22];
+    row.c20 = result[count][23];
+    row.c21 = result[count][24];
+    row.c22 = result[count][25]!=""?result[count][25].replace("-","."):"";
+    row.c23 = result[count][26];
+    row.c24 = result[count][27];
+    row.c25 = result[count][28];
+    row.c26 = result[count][15];
+    count++;
+	return true;
+}
+return false;]]></method>
+        </script-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab-cell" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="新简单主页" id="6">
+            <property name="type">a4</property>
+            <property name="leftMargin">1in</property>
+            <property name="rightMargin">1in</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="7">
+            <property name="marginTop">0pt</property>
+            <property name="height">9.552083333333334in</property>
+            <property name="dataSet">数据集</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">c1</property>
+                    <expression name="expression">dataSetRow["c1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c2</property>
+                    <expression name="expression">dataSetRow["c2"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c3</property>
+                    <expression name="expression">dataSetRow["c3"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c4</property>
+                    <expression name="expression">dataSetRow["c4"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c5</property>
+                    <expression name="expression">dataSetRow["c5"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c6</property>
+                    <expression name="expression">dataSetRow["c6"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c7</property>
+                    <expression name="expression">dataSetRow["c7"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c8</property>
+                    <expression name="expression">dataSetRow["c8"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c9</property>
+                    <expression name="expression">dataSetRow["c9"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c10</property>
+                    <expression name="expression">dataSetRow["c10"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c11</property>
+                    <expression name="expression">dataSetRow["c11"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c12</property>
+                    <expression name="expression">dataSetRow["c12"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c13</property>
+                    <expression name="expression">dataSetRow["c13"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c14</property>
+                    <expression name="expression">dataSetRow["c14"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c15</property>
+                    <expression name="expression">dataSetRow["c15"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c16</property>
+                    <expression name="expression">dataSetRow["c16"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c17</property>
+                    <expression name="expression">dataSetRow["c17"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c18</property>
+                    <expression name="expression">dataSetRow["c18"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c19</property>
+                    <expression name="expression">dataSetRow["c19"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c20</property>
+                    <expression name="expression">dataSetRow["c20"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c21</property>
+                    <expression name="expression">dataSetRow["c21"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c22</property>
+                    <expression name="expression">dataSetRow["c22"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c23</property>
+                    <expression name="expression">dataSetRow["c23"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c24</property>
+                    <expression name="expression">dataSetRow["c24"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c25</property>
+                    <expression name="expression">dataSetRow["c25"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">c26</property>
+                    <expression name="expression">dataSetRow["c26"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="14"/>
+            <detail>
+                <row id="10">
+                    <property name="height">9.552083333333334in</property>
+                    <method name="onRender"><![CDATA[flag=row["ZGJOB_07_02_1_027"];
+]]></method>
+                    <cell id="11">
+                        <property name="fontSize">10pt</property>
+                        <property name="textAlign">left</property>
+                        <grid id="15">
+                            <property name="height">0.8854166666666666in</property>
+                            <column id="16">
+                                <property name="width">1.0416666666666667in</property>
+                            </column>
+                            <column id="241"/>
+                            <row id="17">
+                                <property name="height">0.6in</property>
+                                <cell id="18">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">top</property>
+                                    <label id="19">
+                                        <property name="fontSize">18pt</property>
+                                        <text-property name="text">专 业 技 术 职 务 聘 任 表</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="237">
+                                <property name="height">0.3in</property>
+                                <cell id="238">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">top</property>
+                                    <label id="242">
+                                        <property name="fontFamily">"宋体"</property>
+                                        <property name="fontSize">12pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">工作单位：</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="240">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">16pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">top</property>
+                                    <data id="310">
+                                        <property name="fontSize">12pt</property>
+                                        <property name="fontWeight">normal</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">c1</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </grid>
+                        <grid id="20">
+                            <property name="width">100%</property>
+                            <column id="21">
+                                <property name="width">1.4in</property>
+                            </column>
+                            <column id="22">
+                                <property name="width">0.8in</property>
+                            </column>
+                            <column id="23">
+                                <property name="width">0.6in</property>
+                            </column>
+                            <column id="24">
+                                <property name="width">0.7in</property>
+                            </column>
+                            <column id="25">
+                                <property name="width">1in</property>
+                            </column>
+                            <column id="26"/>
+                            <row id="27">
+                                <property name="height">0.4in</property>
+                                <cell id="28">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="69">
+                                        <text-property name="text">姓     名</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="29">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="311">
+                                        <property name="resultSetColumn">c2</property>
+                                    </data>
+                                </cell>
+                                <cell id="30">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="70">
+                                        <text-property name="text">性  别</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="31">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="312">
+                                        <property name="resultSetColumn">c3</property>
+                                    </data>
+                                </cell>
+                                <cell id="32">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="71">
+                                        <text-property name="text">出生年月</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="33">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="313">
+                                        <property name="resultSetColumn">c4</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="34">
+                                <property name="height">0.4in</property>
+                                <cell id="35">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="72">
+                                        <text-property name="text">身份证号</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="36">
+                                    <property name="colSpan">3</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="314">
+                                        <property name="resultSetColumn">c5</property>
+                                    </data>
+                                </cell>
+                                <cell id="39">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="74">
+                                        <text-property name="text">居住证号
+(非本市户籍)</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="40">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="315">
+                                        <property name="resultSetColumn">c6</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="41">
+                                <property name="height">0.4in</property>
+                                <cell id="42">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="75">
+                                        <text-property name="text">最高学历</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="43">
+                                    <property name="colSpan">3</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="316">
+                                        <property name="resultSetColumn">c7</property>
+                                    </data>
+                                </cell>
+                                <cell id="46">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="236">
+                                        <text-property name="text">学     位</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="47">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="317">
+                                        <property name="resultSetColumn">c8</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="48">
+                                <property name="height">0.4in</property>
+                                <cell id="49">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="78">
+                                        <text-property name="text">毕 业 院 校
+及  专  业</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="50">
+                                    <property name="colSpan">5</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="318">
+                                        <property name="resultSetColumn">c9</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="62">
+                                <property name="height">0.4in</property>
+                                <cell id="63">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">2px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="243">
+                                        <text-property name="text">毕业时间</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="64">
+                                    <property name="colSpan">3</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">2px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="319">
+                                        <property name="resultSetColumn">c10</property>
+                                    </data>
+                                </cell>
+                                <cell id="67">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">2px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="81">
+                                        <text-property name="text">参加工作
+时   间</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="68">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">2px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="320">
+                                        <property name="resultSetColumn">c11</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </grid>
+                        <grid id="82">
+                            <property name="height">2.7291666666666665in</property>
+                            <column id="83">
+                                <property name="width">1.4in</property>
+                            </column>
+                            <column id="84">
+                                <property name="width">2.1in</property>
+                            </column>
+                            <column id="85">
+                                <property name="width">1in</property>
+                            </column>
+                            <column id="253"/>
+                            <row id="88">
+                                <property name="height">1in</property>
+                                <cell id="89">
+                                    <property name="colSpan">1</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="248">
+                                        <text-property name="text">聘任依据</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="90">
+                                    <property name="colSpan">3</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="255">
+                                        <property name="fontSize">10.5pt</property>
+                                        <property name="textAlign">left</property>
+                                        <method name="onRender"><![CDATA[if(row["c12"]=="取得专业技术资格（含文件规定可聘任职务的职业资格等）后聘任"){
+  this.text="■  取得专业技术资格（含文件规定可聘任职务的职业资格等）后聘任"
+}]]></method>
+                                        <text-property name="text">□  取得专业技术资格（含文件规定可聘任职务的职业资格等）后聘任</text-property>
+                                    </label>
+                                    <label id="254">
+                                        <property name="fontSize">10.5pt</property>
+                                        <property name="textAlign">left</property>
+                                        <method name="onRender"><![CDATA[if(row["c12"]=="只聘不评")
+{
+   this.text="■  只聘不评";
+}]]></method>
+                                        <text-property name="text">□  只聘不评</text-property>
+                                    </label>
+                                    <label id="256">
+                                        <property name="fontSize">10.5pt</property>
+                                        <property name="textAlign">left</property>
+                                        <method name="onRender"><![CDATA[if(row["c12"]=="大中专院校毕业生考核后直接聘任")
+{
+   this.text="■  大中专院校毕业生考核后直接聘任";
+}]]></method>
+                                        <text-property name="text">□  大中专院校毕业生考核后直接聘任</text-property>
+                                    </label>
+                                    <label id="257">
+                                        <property name="fontSize">10.5pt</property>
+                                        <property name="textAlign">left</property>
+                                        <method name="onRender"><![CDATA[if(row["c12"]=="其它")
+{
+   var temp = row["c26"]==null?"":row["c26"];
+   if(temp==""){
+     this.text="■  其它";
+   }else{
+     this.text="■  其它("+row["c26"]+")";
+   }
+}]]></method>
+                                        <text-property name="text">□  其它</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="94">
+                                <property name="height">0.5in</property>
+                                <cell id="244">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="258">
+                                        <text-property name="text">专业技术资格
+（职业资格）名称</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="96">
+                                    <property name="colSpan">3</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="321">
+                                        <property name="resultSetColumn">c13</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="100">
+                                <property name="height">0.6in</property>
+                                <cell id="245">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="259">
+                                        <text-property name="text">资格等级</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="102">
+                                    <property name="colSpan">1</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="121">
+                                        <property name="fontSize">10.5pt</property>
+                                        <property name="textAlign">left</property>
+                                        <method name="onRender"><![CDATA[if(row["c14"]=="高级"){
+  this.text="  ■  高级";
+}]]></method>
+                                        <text-property name="text">  □  高级</text-property>
+                                    </label>
+                                    <label id="261">
+                                        <property name="fontSize">10.5pt</property>
+                                        <property name="textAlign">left</property>
+                                        <method name="onRender"><![CDATA[if(row["c14"]=="中级"){
+  this.text="  ■  中级";
+}]]></method>
+                                        <text-property name="text">  □  中级</text-property>
+                                    </label>
+                                    <label id="262">
+                                        <property name="fontSize">10.5pt</property>
+                                        <property name="textAlign">left</property>
+                                        <method name="onRender"><![CDATA[if(row["c14"]=="初级"){
+  this.text="  ■  初级";
+}]]></method>
+                                        <text-property name="text">  □  初级</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="260">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="263">
+                                        <text-property name="text">取得资格
+方  式</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="251">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="264">
+                                        <property name="fontSize">10.5pt</property>
+                                        <property name="textAlign">left</property>
+                                        <method name="onRender"><![CDATA[if(row["c15"]=="评审"||row["c15"]=="认定"){
+  this.text="  ■  评定取得";
+}]]></method>
+                                        <text-property name="text">  □  评定取得</text-property>
+                                    </label>
+                                    <label id="265">
+                                        <property name="fontSize">10.5pt</property>
+                                        <property name="textAlign">left</property>
+                                        <method name="onRender"><![CDATA[if(row["c15"]=="考试"){
+  this.text="  ■  考试取得";
+}]]></method>
+                                        <text-property name="text">  □  考试取得</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="106">
+                                <property name="height">0.4in</property>
+                                <cell id="246">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="137">
+                                        <text-property name="text">评 委 会 名称
+或考试证书颁发机构</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="108">
+                                    <property name="colSpan">3</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="322">
+                                        <property name="resultSetColumn">c16</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="266">
+                                <property name="height">0.4in</property>
+                                <cell id="267">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">2px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="276">
+                                        <text-property name="text">证书取得时间</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="268">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">2px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="323">
+                                        <property name="resultSetColumn">c17</property>
+                                    </data>
+                                </cell>
+                                <cell id="269">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">2px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="277">
+                                        <text-property name="text">证书编号</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="270">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">2px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="324">
+                                        <property name="resultSetColumn">c18</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="271">
+                                <property name="height">0.4in</property>
+                                <cell id="272">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="278">
+                                        <text-property name="text">工作部门</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="273">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="325">
+                                        <property name="resultSetColumn">c19</property>
+                                    </data>
+                                </cell>
+                                <cell id="274">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="279">
+                                        <text-property name="text">行政职务</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="275">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="326">
+                                        <property name="resultSetColumn">c20</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="280">
+                                <property name="height">0.4in</property>
+                                <cell id="281">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="290">
+                                        <text-property name="text">聘任专业技术职务
+名称(级别)</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="282">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="327">
+                                        <property name="resultSetColumn">c21</property>
+                                    </data>
+                                </cell>
+                                <cell id="283">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="291">
+                                        <text-property name="text">首次聘任
+时间</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="284">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="328">
+                                        <property name="resultSetColumn">c22</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="285">
+                                <property name="height">0.4in</property>
+                                <cell id="286">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="292">
+                                        <text-property name="text">聘 任 期 限</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="287">
+                                    <property name="colSpan">3</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="332">
+                                        <method name="onRender"><![CDATA[d = row["c23"];
+d1 = row["c24"];
+s="";
+s1="";
+if(d!=null&amp;&amp;!d.equals("")){
+  s=d.split("-")[0]+"年"+d.split("-")[1]+"月"+d.split("-")[2]+"日";
+}
+if(d1!=null&amp;&amp;!d1.equals("")){
+  s1=d1.split("-")[0]+"年"+d1.split("-")[1]+"月"+d1.split("-")[2]+"日";
+}
+if(s!=""&amp;&amp;s1!=""){
+ this.setDisplayValue(s+"  至  "+s1);
+ }
+ if(s!=""&amp;&amp;s1==""){
+ this.setDisplayValue(s+"  至  年  月  日");
+ }
+  if(s==""&amp;&amp;s1!=""){
+ this.setDisplayValue("年  月  日  至 "+s1);
+ }]]></method>
+                                        <property name="resultSetColumn">c23</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="293">
+                                <property name="height">1.2in</property>
+                                <cell id="294">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="303">
+                                        <text-property name="text">行政负责人
+（签章）</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="295">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">bottom</property>
+                                    <label id="306">
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">年      月     日 </text-property>
+                                    </label>
+                                </cell>
+                                <cell id="296">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="304">
+                                        <text-property name="text">单 位
+（盖章）</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="297">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">bottom</property>
+                                    <label id="331">
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">年     月    日 </text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="298">
+                                <property name="height">0.4in</property>
+                                <cell id="299">
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">2px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="305">
+                                        <text-property name="text">备    注</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="300">
+                                    <property name="colSpan">3</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontFamily">"宋体"</property>
+                                    <property name="fontSize">11pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">2px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">2px</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <data id="330">
+                                        <property name="textAlign">left</property>
+                                        <method name="onRender"><![CDATA[this.setDisplayValue(this.getValue());]]></method>
+                                        <property name="resultSetColumn">c25</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </grid>
+                        <label id="163">
+                            <property name="fontFamily">"宋体"</property>
+                            <text-property name="text">注： 上海市人力资源和社会保障局制（2009年版）。</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="com.shxy.www.action" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="sessionInterceptor" class="com.shxy.www.interceptor.UserLoginCheck"></interceptor>
+		</interceptors>
+		<global-results>
+			<result name="relogin">/relogin.jsp</result>
+		</global-results>
+        <!-- 数据库IP地址管理 -->
+        <action name="IPManage_*" class="com.shxy.www.action.IPManageAction" method="{1}">
+        	<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+            <result name="list">/function/ips/ipslist.jsp</result>
+            <result name="status">/extjs/plugins/grid/connmanage/connmanage.jsp</result>
+        </action>
+        <!-- 报表模板管理 -->
+        <action name="TempletManage_*" class="com.shxy.www.action.TempletManageAction" method="{1}">
+        	<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+            <result name="editalert">/function/alert/editalert.jsp</result>
+        </action>
+        <!-- 报表数据库配置管理 -->
+        <action name="ReportConfig_*" class="com.shxy.www.action.ReportConfigAction" method="{1}">
+        	<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+            <result name="input">/function/alert/editalert.jsp</result>
+            <result name="alert">/function/alert/editalert.jsp</result>
+        </action>
+        
+        <!-- 导出文件管理 -->
+        <action name="ExportFile_*" class="com.shxy.www.action.ExportFileAction" method="{1}">
+        	<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+        </action>
+        
+        <!-- 数据管理 -->
+        <action name="DataManage_*" class="com.shxy.www.action.DataManageAction" method="{1}">
+        	<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+        	<result name="editalert">/function/alert/editalert.jsp</result>
+        	<result name="delalert">/function/alert/delalert.jsp</result>
+        	<result name="read">${url}</result>
+        </action>
+        <!-- 所有列表数据操作 -->
+        <action name="GridData_*" class="com.shxy.www.action.GridDataAction" method="{1}">
+        	<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+        </action>
+        <!-- 所有树数据操作 -->
+        <action name="TreeData_*" class="com.shxy.www.action.TreeDataAction" method="{1}">
+        	<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+        </action>
+	</package>
+</struts>

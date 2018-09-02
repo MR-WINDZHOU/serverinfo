@@ -1,0 +1,11 @@
+/* ******************************************
+  RIT -- CARS+
+  Created by: Matt Bango and Chris Muench
+****************************************** */
+.red{ font-size: 25px; left: 200px; height:30px; text-align:center; line-height:30px; }
+.loginButton {width:119px;height:45px;border: none;padding: 0;float:right;margin: 0 15px 0 50px;}
+input {background: transparent url(images/login/input_bg.jpg) no-repeat top;text-align: left;padding: 6px;border: 1px solid #cecece;width: 230px;color: #666666; height:26px}
+.formRow {width: 335px; margin-top:16px; height: 30px;}
+
+.formImage {float:left;margin: 7px 25px 0 25px;}
+.formField {float:left;padding: 3px;background-color: #f2f2f2;}
