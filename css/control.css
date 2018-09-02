@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+html, body, form{padding:0px; margin:0px; width:100%; height:100%;}
+body{padding: 3px;}
+/*通用按钮*/
+input.input2{ width:37px;height:19px; background:url(../images/input2.jpg) no-repeat;color:#072E59;border:0px;cursor:pointer;font-size:12px;line-height:19px;line-height:22px\9;vertical-align:middle;}
+input.input3{ width:49px;height:19px; background:url(../images/input3.jpg) no-repeat;color:#072E59;border:0px;cursor:pointer;font-size:12px;line-height:19px;line-height:22px\9;vertical-align:middle;}
+input.input4{ width:61px;height:19px; background:url(../images/input4.jpg) no-repeat;color:#072E59;border:0px;cursor:pointer;font-size:12px;line-height:19px;line-height:22px\9;vertical-align:middle;}
+input.input5{ width:73px;height:19px; background:url(../images/input5.jpg) no-repeat;color:#072E59;border:0px;cursor:pointer;font-size:12px;line-height:19px;line-height:22px\9;vertical-align:middle;}
+input.input6{ width:87px;height:19px; background:url(../images/input6.jpg) no-repeat;color:#072E59;border:0px;cursor:pointer;font-size:12px;line-height:19px;line-height:22px\9;vertical-align:middle;}
+/*通用按钮*/
+button.input2{ width:37px;height:19px; background:url(../images/input2.jpg) no-repeat;color:#072E59;border:0px;cursor:pointer;font-size:12px;line-height:19px;line-height:22px\9;vertical-align:middle;}
+button.input3{ width:49px;height:19px; background:url(../images/input3.jpg) no-repeat;color:#072E59;border:0px;cursor:pointer;font-size:12px;line-height:19px;line-height:22px\9;vertical-align:middle;}
+button.input4{ width:61px;height:19px; background:url(../images/input4.jpg) no-repeat;color:#072E59;border:0px;cursor:pointer;font-size:12px;line-height:19px;line-height:22px\9;vertical-align:middle;}
+button.input5{ width:73px;height:19px; background:url(../images/input5.jpg) no-repeat;color:#072E59;border:0px;cursor:pointer;font-size:12px;line-height:19px;line-height:22px\9;vertical-align:middle;}
+button.input6{ width:87px;height:19px; background:url(../images/input6.jpg) no-repeat;color:#072E59;border:0px;cursor:pointer;font-size:12px;line-height:19px;line-height:22px\9;vertical-align:middle;}
+
+.bottomDiv{width:100%;height:30px; bottom: 0px; position: absolute; text-align: center; padding: 5px;}
+.bottomDiv2{width:100%;height:30px; bottom: 0px; position: relative; text-align: center; padding: 5px;}
+.bottomDiv3{position: absolute; bottom: 0px; padding:4px; width:100%; text-align: center;}
+
+/*通用输入控件*/
+input.input{-moz-box-sizing : border-box ; -webkit-box-sizing : border-box ; box-sizing : border-box ; height : 22px ; * height : 22px ; border: 1px solid #7f9db9; vertical-align: middle; font-size:12px; padding:3px 2px; width:100%; min-width: 50px; float:left;}
+input.select{width:15px;height:22px;border:none;cursor:pointer;background:url("../images/select_arrow.gif") no-repeat center; margin-left:-17px; vertical-align: middle; float:left;}
+input.select_over{width:15px;height:22px;border:none;cursor:pointer;background:url("../images/select_arrow_over.gif") no-repeat center; margin-left:-17px; vertical-align: middle; float:left;}
+input.tree{width:15px;height:22px;border:none;cursor:pointer;background:url("../images/text_tree.gif") no-repeat center; margin-left:-17px; vertical-align: middle; float:left;}
+input.tree_over{width:15px;height:22px;border:none;cursor:pointer;background:url("../images/text_tree_over.gif") no-repeat center; margin-left:-17px; vertical-align: middle; float:left;}
+input.colors{height: 26px;width: 90px;vertical-align: middle;border: 1px solid #7f9db9; font-size: 13px; padding: 4px}
+
+/*图片上传 预览*/
+div.uploadimgpreview{width:100%; height: 100%; position: relative;}
+div.uploadimgpreview div.previewimg{height:100%; width: 100%;}
+div.uploadimgpreview div.previewimg img{height:100%; width: 100%;}
+div.uploadimgpreview input.uploadfile{height:32px; width:32px; font-size:5px; position:absolute;z-index:999; cursor:pointer;filter:alpha(opacity:0);opacity: 0; top: 50%; margin-top: -16px; left:50%; margin-left: -16px;}
+div.uploadimgpreview img.titleimg{width:32px;height:32px; position:absolute; z-index:998; cursor:pointer; top: 50%; margin-top: -16px; left:50%; margin-left: -16px; display: none;}
+
+/*附件上传*/
+div.attachupload{height:22px; widht:100%; background:url(../images/attach.gif) no-repeat center left; position: relative ; padding-left: 19px;}
+div.attachupload input.attachinput{width:100%; heigth:100%; margin-right:45px; font-size: 12px; padding: 2px 2px 1px; clear: both;}
+div.attachupload img.urlimg{position: absolute; top: 50%; right:22px; margin-top: -8px;}
+div.attachupload img.fileimg{position: absolute; top: 50%; right:5px; margin-top: -6px; width: 12px; height: 12px; z-index: 0;}
+div.attachupload input.uploadfile{height:16px; width:16px; font-size:4px; position:absolute; cursor:pointer;filter:alpha(opacity:0);opacity: 0; top: 50%; margin-top: -8px; right:0px;}
+div.attachupload div.urldiv{min-width: 188px; height: 22px; position: absolute; z-index: -1; top: 25px; right: 20px; z-index: 999; display:none; padding: 1px 18px 1px 30px; border: 1px solid #7f9db9; background-color: white;}
+div.attachupload div.urldiv div.font{height: 18px; width: 18px; position: absolute; left: 0px; text-align: right;}
+div.attachupload div.urldiv input{width:100%; height:21px; font-size: 12px; padding: 2px 2px 1px 2px;}
+div.attachupload div.urldiv img.closeurl{width: 16px; height: 16px; position: absolute; top: 0px; right: 1px;}
+
+/*数据加载 缓冲页面*/
+div.dataloading{font-size:13px; table-layout: fixed; width:100%; position: absolute; top:30%; text-align: center; height:43px;}
+div.dataloading div.imgfont{height:100%; width:156px;}
+div.dataloading div.imgfont img{float:left;}
+div.dataloading div.imgfont div.datafont{float:left; line-height: 43px; width:auto;}
+
+/* 表格通用样式 */
+table.accordion{width:100%; height:100%; table-layout: fixed; border-collapse:collapse; font-size: 13px;}
+table.accordion tr{}
+table.accordion td{border-collapse:collapse; padding:3px;}
+table.accordion td input.text{width:100%; height:100%;}
+table.accordion td textarea.textarea{width:100%; height:100%;}
+table.accordion td select.select{width:100%; height:100%;}
+table.accordion td iframe.iframe{width:100%; height:100%;}
